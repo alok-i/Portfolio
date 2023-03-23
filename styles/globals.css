@@ -24,3 +24,150 @@ a {
     background: black;
   }
 }
+
+.container {
+  height: 100vh;
+  background :radial-gradient(#37373a, #000000);
+  display: flex;
+}
+.containerTwo{
+  height: 100vh;
+  background: #000;
+}
+.btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+}
+.toggle
+{
+   position: absolute;
+   top:6%;
+   left:2%;
+   width: 40px;
+   height: 40px;
+   background: black;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+   border-radius: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   z-index: 1000;
+  }
+
+  .toggle span
+  {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    border-radius :4px;
+    cursor : pointer;
+    transition : 0.5s;
+    overflow: hidden;
+  }
+
+  .toggle span:nth-child(1)
+  {
+    transform: translateY(-15px);
+    width: 10px;
+    left: 10px;
+
+  }
+
+  .toggle.active span:nth-child(1)
+  {
+    width : 22px;
+    transform : translateY(0px) rotate(45deg)
+  }
+
+
+  .toggle span:nth-child(2)
+  {
+    transform: translateY(15px);
+    width: 10px;
+    left: 10px;
+
+  }
+
+  .toggle.active span:nth-child(2)
+  {
+    width :20px;
+    transform: translateY(0px) rotate(315deg);
+    transition-delay : 0.25s
+
+  }
+
+  /* .toggle.active span:nth-child(3)
+  {
+    transform: translate(50px);
+  } */
+
+  .nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 0 0;
+    max-width: 48px;
+    z-index: 1000;
+    top : 14%;
+    left : 1%;
+    opacity: 0;
+  }
+  
+ .handle{
+    opacity: 1;
+ }
+
+  .navLink {
+    padding: 30px;
+    color: #fff;
+    font-weight: 500;
+    font-size: var(--headerNavFontSize);
+    text-decoration: none;
+    position: relative;
+    transition: color 300ms ease 0.1s;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    z-index: 1000;
+    top:10%;
+  
+    }
+
+    .navList {
+        transform: rotate(-90deg) translate3d(-50%, 0, 0);
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+        top: 16px;
+        z-index: 1000;
+      }
+      
+  .textH{
+    position: absolute;
+    top: 60%;
+    left:30%;
+    font-size: 3vw;
+    font-family: 'Josefin Sans', sans-serif;
+    z-index: 5;
+  }
+
+  .intro:before{
+    
+    background: linear-gradient(90deg , transparent 0% , #000 5% , #000 100%);
+  }
+
+  h1 .box{
+    position: absolute;
+    top:96%;
+    display: inline-block;
+    background: #504f52;
+    width: 40px;
+    height: 0.5vw;
+    z-index: 1;
+  } 

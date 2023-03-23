@@ -3,5 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 }
+const withTM = require('next-transpile-modules')(['gsap']);
 
-module.exports = nextConfig
+
+module.exports = withTM(nextConfig);
