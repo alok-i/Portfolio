@@ -5,7 +5,7 @@ import gsap from 'gsap'
 
 function ChangingTexts() {
 
-    const words = ["not just a Developer." , "a Creator." , "a Designer" , "a technology Enthusiast."]
+    const words = ["a Developer." , "a Creator." , "a Designer" , "a technology Enthusiast."]
    
     useEffect(()=>{
         let cursor = gsap.to('.cursor' , {opacity: 0 , ease:"power8.inOut" , repeat:-1})

@@ -26,13 +26,17 @@ a {
 }
 
 .container {
+  position: relative;
   height: 100vh;
-  background :radial-gradient(#37373a, #000000);
-  display: flex;
+  width: 100vw;
+  background :radial-gradient(#100f0f, #181717);
+  overflow: hidden;
 }
 .containerTwo{
-  height: 100vh;
-  background: #000;
+  position: relative;
+  height: 140vh;
+  width :100vw;
+  background: rgb(5, 4, 4);
 }
 .btn{
   position: absolute;
@@ -171,3 +175,24 @@ a {
     height: 0.5vw;
     z-index: 1;
   } 
+  .br{
+    height: 4px;
+    background-color: red;
+    border: none;
+    z-index: 100;
+  }
+
+  .ideaText {
+
+  position: absolute;
+  display: flex;
+  color:white;
+  top: 80%;
+  left:60%;
+  font-family: serif;
+  font-size: 70px;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: 5;
+
+  }
