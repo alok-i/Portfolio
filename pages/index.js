@@ -18,7 +18,7 @@ import { CameraShake } from "@react-three/drei";
 import * as THREE from 'three';
 import ParticleMagic from "../components/ParticleMagic";
 import splitType from 'split-type';
-import AnimatedTexts from "../components/AnimatedTexts";
+import Galaxy from "../components/Galaxy";
 
 export default function Home() {
   
@@ -30,12 +30,12 @@ export default function Home() {
    childRef.current.moveText();
   } 
 
-  function Rig() {
-    const [vec] = useState(() => new THREE.Vector3())
-    const { camera, mouse } = useThree()
-    useFrame(() => camera.position.lerp(vec.set(mouse.x * 2, 1, 60), 0.005))
-    return <CameraShake maxYaw={0} maxPitch={0.005} maxRoll={0.002} yawFrequency={0} pitchFrequency={0.2} rollFrequency={0.4} />
-  }
+  // function Rig() {
+  //   const [vec] = useState(() => new THREE.Vector3())
+  //   const { camera, mouse } = useThree()
+  //   useFrame(() => camera.position.lerp(vec.set(mouse.x * 2, 1, 60), 0.005))
+  //   return <CameraShake maxYaw={0} maxPitch={0.005} maxRoll={0.002} yawFrequency={0} pitchFrequency={0.2} rollFrequency={0.4} />
+  // }
 
  
 
@@ -82,10 +82,12 @@ export default function Home() {
       <ChangingTexts></ChangingTexts>
     </section>
     <section className="containerTwo" >
-    <Canvas camera={{ position: [0, 0, 4], fov:5}}>
-        <Explore></Explore>
+    <Canvas camera={{ position: [20, 20, 20], fov:5}}>
+        {/* <Explore></Explore> */}
         <ParticleMagic></ParticleMagic>
-        <Rig></Rig>
+        <ambientLight></ambientLight>
+        {/* <ParticleDance></ParticleDance> */}
+        {/* <Rig></Rig> */}
     </Canvas>
       <div className="ideaText">
           <span ref={textRef}>Form An Idea!</span>
@@ -93,6 +95,11 @@ export default function Home() {
     </section>
     <div className="container">
          <Button></Button>
+         <Canvas camera={{ position: [20, 20, 20] , fov:60}}>
+          <ambientLight intensity={10} color={"white"}></ambientLight>
+          <Galaxy></Galaxy>
+          {/* <OrbitControls></OrbitControls> */}
+         </Canvas>
     </div>
     </>
   );

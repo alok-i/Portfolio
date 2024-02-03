@@ -43,7 +43,7 @@ const Jumbo = forwardRef((props , ref) =>{
         hAlign="center"
         className="third"
         position={[0.8, 0, 0]}
-        children="Ø"
+        children="O"
       />
       <Text
         hAlign="center"
