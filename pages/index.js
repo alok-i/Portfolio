@@ -4,103 +4,81 @@ import styles from "../styles/Home.module.css";
 import Text from "../components/Text";
 import Lights from "../components/Lights";
 import { gsap } from "gsap";
+import { PerspectiveCamera, useHelper } from "@react-three/drei";
 import { useRef, useState } from "react";
-import { useFrame , useThree } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { button } from "react";
 import { DecrementWrapStencilOp } from "three";
 import Jumbo from "../components/Jumbo";
 import Button from "../components/Button/button";
 import ChangingTexts from "../components/ChangingTexts";
-import Explore from "../components/explore";
-import ParticleDance from "../components/particleDance";
-import { OrbitControls } from "@react-three/drei";
-import { CameraShake } from "@react-three/drei";
-import * as THREE from 'three';
+import * as THREE from "three";
 import ParticleMagic from "../components/ParticleMagic";
-import splitType from 'split-type';
+import splitType from "split-type";
+import { OrbitControls, CameraShake, Environment } from "@react-three/drei";
 import Galaxy from "../components/Galaxy";
+import HomePage from "../components/HomePage";
 
-export default function Home() {
-  
-  const childRef = useRef(null);
+const Home = () => {
   const textRef = useRef(null);
-  
-  const moveAlpha= ()=>{
-   
-   childRef.current.moveText();
-  } 
 
-  // function Rig() {
-  //   const [vec] = useState(() => new THREE.Vector3())
-  //   const { camera, mouse } = useThree()
-  //   useFrame(() => camera.position.lerp(vec.set(mouse.x * 2, 1, 60), 0.005))
-  //   return <CameraShake maxYaw={0} maxPitch={0.005} maxRoll={0.002} yawFrequency={0} pitchFrequency={0.2} rollFrequency={0.4} />
-  // }
-
- 
-
-  useEffect(()=>{
-
+  useEffect(() => {
     const tl = gsap.timeline();
 
     gsap.set(".ideaText", {
       // Change this to -200px for a bigger cylinder
       transformOrigin: "center center -100px",
       // Comment this out to see the backs of letters
-      backfaceVisibility: "hidden"
+      backfaceVisibility: "hidden",
     });
 
     tl.to(".ideaText", 1.8, {
-
-      scrollTrigger : {
+      scrollTrigger: {
         trigger: "textRef.current.position",
-        start:"1500px 40%",
+        start: "1500px 40%",
         end: "1800px 90%",
-        scrub:1,
+        scrub: 1,
         markers: true,
-        toogleActions: "restart"
+        toogleActions: "restart",
       },
-      duration :20,
+      duration: 20,
       delay: 2,
       rotationX: "360",
       stagger: 0.1,
-    })
-
-  })
- 
+    });
+  });
 
   return (
     <>
-    <section className="container"> 
-       <Canvas camera={{ position: [0, 0, 10] }}>
-        <ambientLight intensity={10} color={"white"} ></ambientLight>
-        <fog attach="fog" args={["#171720", 100, 120]}></fog>
-        <Lights></Lights>
-        <Jumbo ref={childRef}></Jumbo>
-      </Canvas>
-      <Button></Button>
-      <ChangingTexts></ChangingTexts>
-    </section>
-    <section className="containerTwo" >
-    <Canvas camera={{ position: [20, 20, 20], fov:5}}>
-        {/* <Explore></Explore> */}
-        <ParticleMagic></ParticleMagic>
-        <ambientLight></ambientLight>
-        {/* <ParticleDance></ParticleDance> */}
-        {/* <Rig></Rig> */}
-    </Canvas>
-      <div className="ideaText">
+      <section className="container">
+        <Canvas>
+          <HomePage></HomePage>
+        </Canvas>
+        <Button></Button>
+        <ChangingTexts></ChangingTexts>
+      </section>
+      <section className="containerTwo">
+        <Canvas camera={{ position: [20, 20, 20] }}>
+          {/* <Explore></Explore> */}
+          <ParticleMagic></ParticleMagic>
+          <ambientLight intensity={10} color={"white"}></ambientLight>
+          {/* <ParticleDance></ParticleDance> */}
+          {/* <Rig></Rig> */}
+        </Canvas>
+        <div className="ideaText">
           <span ref={textRef}>Form An Idea!</span>
-      </div>
-    </section>
-    <div className="container">
-         <Button></Button>
-         <Canvas camera={{ position: [20, 20, 20] , fov:60}}>
+        </div>
+      </section>
+      <div className="container">
+        <Button></Button>
+        <Canvas camera={{ position: [20, 20, 20], fov: 60 }}>
           <ambientLight intensity={10} color={"white"}></ambientLight>
           <Galaxy></Galaxy>
           {/* <OrbitControls></OrbitControls> */}
-         </Canvas>
-    </div>
+        </Canvas>
+      </div>
     </>
   );
-}
+};
+
+export default Home;

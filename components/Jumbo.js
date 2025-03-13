@@ -7,32 +7,29 @@ import gsap from "gsap";
 import { useState } from "react";
 import { useLayoutEffect } from "react";
 import { TextureDataType } from "three";
- // eslint-disable-next-line react/display-name
-const Jumbo = forwardRef((props , ref) =>{
-  
-  const TextRef  = useRef(null);
+// eslint-disable-next-line react/display-name
+const Jumbo = forwardRef((props, ref) => {
+  const TextRef = useRef(null);
 
-   useImperativeHandle(ref , ()=>{
+  //  useImperativeHandle(ref , ()=>{
 
-    return{
-        moveText(){
-            console.log(TextRef.current);
-        }
-    }
+  //   return{
+  //       moveText(){
+  //           console.log(TextRef.current);
+  //       }
+  //   }
 
-   }, [])
+  //  }, [])
 
-
-
-  return (  
+  return (
     <>
       <Text
         ref={TextRef}
         hAlign="center"
-        className='first'
+        className="first"
         position={[-4.2, 0, 0]}
         children="A"
-       />
+      />
       <Text
         hAlign="center"
         className="second"
@@ -53,7 +50,7 @@ const Jumbo = forwardRef((props , ref) =>{
       />
     </>
   );
-})
+});
 
 // const forwardedText = React.forwardRef(Jumbo);
 

@@ -29,170 +29,157 @@ a {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background :radial-gradient(#100f0f, #181717);
+  /* background :radial-gradient(#100f0f, #181717); */
+  background-color: rgb(46, 46, 48);
+  background: radial-gradient(circle at bottom center, #212121 0%, #101010 80%);
   overflow: hidden;
 }
-.containerTwo{
+.containerTwo {
   position: relative;
   height: 140vh;
-  width :100vw;
+  width: 100vw;
   background: rgb(5, 4, 4);
 }
-.btn{
+.btn {
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 10000;
 }
-.toggle
-{
-   position: absolute;
-   top:6%;
-   left:2%;
-   width: 40px;
-   height: 40px;
-   background: black;
-   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-   border-radius: 10px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   cursor: pointer;
-   z-index: 1000;
-  }
+.toggle {
+  position: absolute;
+  top: 6%;
+  left: 2%;
+  width: 40px;
+  height: 40px;
+  background: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
 
-  .toggle span
-  {
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: #fff;
-    border-radius :4px;
-    cursor : pointer;
-    transition : 0.5s;
-    overflow: hidden;
-  }
+.toggle span {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow: hidden;
+}
 
-  .toggle span:nth-child(1)
-  {
-    transform: translateY(-15px);
-    width: 10px;
-    left: 10px;
+.toggle span:nth-child(1) {
+  transform: translateY(-15px);
+  width: 10px;
+  left: 10px;
+}
 
-  }
+.toggle.active span:nth-child(1) {
+  width: 22px;
+  transform: translateY(0px) rotate(45deg);
+}
 
-  .toggle.active span:nth-child(1)
-  {
-    width : 22px;
-    transform : translateY(0px) rotate(45deg)
-  }
+.toggle span:nth-child(2) {
+  transform: translateY(15px);
+  width: 10px;
+  left: 10px;
+}
 
+.toggle.active span:nth-child(2) {
+  width: 20px;
+  transform: translateY(0px) rotate(315deg);
+  transition-delay: 0.25s;
+}
 
-  .toggle span:nth-child(2)
-  {
-    transform: translateY(15px);
-    width: 10px;
-    left: 10px;
-
-  }
-
-  .toggle.active span:nth-child(2)
-  {
-    width :20px;
-    transform: translateY(0px) rotate(315deg);
-    transition-delay : 0.25s
-
-  }
-
-  /* .toggle.active span:nth-child(3)
+/* .toggle.active span:nth-child(3)
   {
     transform: translate(50px);
   } */
 
-  .nav {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex: 0 0 0 0;
-    max-width: 48px;
-    z-index: 1000;
-    top : 14%;
-    left : 1%;
-    opacity: 0;
-  }
-  
- .handle{
-    opacity: 1;
- }
-
-  .navLink {
-    padding: 30px;
-    color: #fff;
-    font-weight: 500;
-    font-size: var(--headerNavFontSize);
-    text-decoration: none;
-    position: relative;
-    transition: color 300ms ease 0.1s;
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-    z-index: 1000;
-    top:10%;
-  
-    }
-
-    .navList {
-        transform: rotate(-90deg) translate3d(-50%, 0, 0);
-        display: flex;
-        flex-direction: row-reverse;
-        position: relative;
-        top: 16px;
-        z-index: 1000;
-      }
-      
-  .textH{
-    position: absolute;
-    top: 60%;
-    left:30%;
-    font-size: 3vw;
-    font-family: 'Josefin Sans', sans-serif;
-    z-index: 5;
-  }
-
-  .intro:before{
-    
-    background: linear-gradient(90deg , transparent 0% , #000 5% , #000 100%);
-  }
-
-  h1 .box{
-    position: absolute;
-    top:96%;
-    display: inline-block;
-    background: #504f52;
-    width: 40px;
-    height: 0.5vw;
-    z-index: 1;
-  } 
-  .br{
-    height: 4px;
-    background-color: red;
-    border: none;
-    z-index: 100;
-  }
-
-  .ideaText {
-
+.nav {
   position: absolute;
   display: flex;
-  color:white;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 0 0;
+  max-width: 48px;
+  z-index: 1000;
+  top: 14%;
+  left: 1%;
+  opacity: 0;
+}
+
+.handle {
+  opacity: 1;
+}
+
+.navLink {
+  padding: 30px;
+  color: #fff;
+  font-weight: 500;
+  font-size: var(--headerNavFontSize);
+  text-decoration: none;
+  position: relative;
+  transition: color 300ms ease 0.1s;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.navList {
+  transform: rotate(-90deg) translate3d(-50%, 0, 0);
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  top: 16px;
+  z-index: 1000;
+}
+
+.textH {
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  font-size: 3vw;
+  font-family: "Josefin Sans", sans-serif;
+  z-index: 5;
+}
+
+.intro:before {
+  background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
+}
+
+h1 .box {
+  position: absolute;
+  top: 96%;
+  display: inline-block;
+  background: #504f52;
+  width: 40px;
+  height: 0.5vw;
+  z-index: 1;
+}
+.br {
+  height: 4px;
+  background-color: red;
+  border: none;
+  z-index: 100;
+}
+
+.ideaText {
+  position: absolute;
+  display: flex;
+  color: white;
   top: 80%;
-  left:60%;
+  left: 60%;
   font-family: serif;
   font-size: 70px;
   text-align: center;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   z-index: 5;
-
-  }
+}
