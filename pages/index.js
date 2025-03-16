@@ -18,7 +18,8 @@ import splitType from "split-type";
 import { OrbitControls, CameraShake, Environment } from "@react-three/drei";
 import Galaxy from "../components/Galaxy";
 import HomePage from "../components/HomePage";
-
+import Explore from "../components/explore";
+import ParticleDance from "../components/particleDance";
 const Home = () => {
   const textRef = useRef(null);
 
@@ -58,13 +59,7 @@ const Home = () => {
         <ChangingTexts></ChangingTexts>
       </section>
       <section className="containerTwo">
-        <Canvas camera={{ position: [20, 20, 20] }}>
-          {/* <Explore></Explore> */}
-          <ParticleMagic></ParticleMagic>
-          <ambientLight intensity={10} color={"white"}></ambientLight>
-          {/* <ParticleDance></ParticleDance> */}
-          {/* <Rig></Rig> */}
-        </Canvas>
+        <ParticleDance></ParticleDance>
         <div className="ideaText">
           <span ref={textRef}>Form An Idea!</span>
         </div>
