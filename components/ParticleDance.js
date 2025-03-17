@@ -94,8 +94,8 @@ const CustomGeometryParticles = (props) => {
 
   // Set up the animation cycle
   useEffect(() => {
-    const cycleInterval = 2000; // Time for each shape (5 seconds)
-    const transitionInterval = 1000; // Time between shapes (3 seconds of random positions)
+    const cycleInterval = 3000; // Time for each shape (5 seconds)
+    const transitionInterval = 3000; // Time between shapes (3 seconds of random positions)
 
     const intervalId = setInterval(() => {
       if (currentShape === -1) {
