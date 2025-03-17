@@ -94,8 +94,8 @@ const CustomGeometryParticles = (props) => {
 
   // Set up the animation cycle
   useEffect(() => {
-    const cycleInterval = 500; // Time for each shape (5 seconds)
-    const transitionInterval = 500; // Time between shapes (3 seconds of random positions)
+    const cycleInterval = 2000; // Time for each shape (5 seconds)
+    const transitionInterval = 1000; // Time between shapes (3 seconds of random positions)
 
     const intervalId = setInterval(() => {
       if (currentShape === -1) {
@@ -188,8 +188,8 @@ const CustomGeometryParticles = (props) => {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.0015}
-        color="#5786F5"
+        size={0.01}
+        color="#ffffff"
         sizeAttenuation
         depthWrite={false}
       />
