@@ -66,11 +66,11 @@ const Home = () => {
       </section>
       <div className="container">
         <Button></Button>
-        <Canvas camera={{ position: [20, 20, 20], fov: 60 }}>
-          <ambientLight intensity={10} color={"white"}></ambientLight>
-          <Galaxy></Galaxy>
-          {/* <OrbitControls></OrbitControls> */}
-        </Canvas>
+        {/* <Canvas camera={{ position: [20, 20, 20], fov: 60 }}> */}
+        {/* <ambientLight intensity={10} color={"white"}></ambientLight> */}
+        <Galaxy></Galaxy>
+        {/* <OrbitControls></OrbitControls> */}
+        {/* </Canvas> */}
       </div>
     </>
   );
