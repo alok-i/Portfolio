@@ -145,7 +145,7 @@ function Galaxy() {
     <Canvas camera={{ position: [0, 23, 10] }}>
       <ParticleMagic />
       <ambientLight intensity={0.5} />
-      <pointLight position={[0, 0, 0]} intensity={1.5} />
+      {/* <pointLight position={[0, 0, 0]} intensity={1.5} /> */}
 
       {/* Sun */}
       <mesh>

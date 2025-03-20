@@ -20,6 +20,7 @@ import Galaxy from "../components/Galaxy";
 import HomePage from "../components/HomePage";
 import Explore from "../components/explore";
 import ParticleDance from "../components/particleDance";
+import AstronautComp from "../components/HomePage";
 const Home = () => {
   const textRef = useRef(null);
 
@@ -52,13 +53,11 @@ const Home = () => {
   return (
     <>
       <section className="container">
-        <Canvas>
-          <HomePage></HomePage>
-        </Canvas>
+        <AstronautComp></AstronautComp>
         <Button></Button>
         <ChangingTexts></ChangingTexts>
       </section>
-      <section className="containerTwo">
+      <section className="container">
         <ParticleDance></ParticleDance>
         <div className="ideaText">
           <span ref={textRef}>Form An Idea!</span>

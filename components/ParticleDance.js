@@ -200,7 +200,7 @@ const CustomGeometryParticles = (props) => {
 const ParticleDance = () => {
   return (
     <Canvas camera={{ position: [0, 0, 3] }}>
-      <ambientLight intensity={0.5} />
+      {/* <ambientLight intensity={0.5} /> */}
       <CustomGeometryParticles count={2000} />
       <OrbitControls autoRotate enableZoom={false} zoomSpeed={0} />
     </Canvas>

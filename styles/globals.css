@@ -19,10 +19,10 @@ a {
   html {
     color-scheme: dark;
   }
-  body {
+  /* body {
     color: white;
     background: black;
-  }
+  } */
 }
 
 .container {
@@ -31,7 +31,8 @@ a {
   width: 100vw;
   /* background :radial-gradient(#100f0f, #181717); */
   /* background: #20222b; */
-  background: radial-gradient(circle at bottom center, #212121 0%, #101010 80%);
+  /* background: radial-gradient(circle at bottom center, #212121 0%, #101010 80%); */
+  background-color: #000;
   overflow: hidden;
 }
 .containerTwo {
